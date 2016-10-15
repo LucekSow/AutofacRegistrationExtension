@@ -38,7 +38,7 @@ namespace AutofacRegistrationExtension
                     yield return new RegisterAsTypeEntity
                     {
                         OriginType = type,
-                        RegisterType = (customAttributes.Length == 0) ? new List<Type>() : customAttributes.Select(x => x.Type)
+                        RegisterType = (customAttributes.Length == 0) ? new List<Type>() : customAttributes.Select(x => x.Type).Where(x => x != null)
                     };
                 }
             }
